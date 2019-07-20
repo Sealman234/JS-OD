@@ -1,0 +1,52 @@
+// Pixel 2 XL Height
+@mixin Pixel2XL {
+    @media (max-width: 823px) {
+        @content;
+    }
+}
+
+// iPhone 6/7/8 Height 以下 (不包含)
+@mixin iPhone8-h {
+    @media (max-width: 666px){
+        @content;
+    }
+}
+
+// Galaxy S5 Height ~ iPhone 5/SE Height
+@mixin GalaxyS5-h {
+    @media (max-width: 640px){
+        @content;
+    }
+}
+
+// iPhone 6/7/8 Plus Width
+@mixin iPhone8p-w {
+    @media (max-width: 414px){
+        @content;
+    }
+}
+
+// Galaxy S5 Weight ~ iPhone 5/SE Width
+@mixin GalaxyS5-w {
+    @media (max-width: 360px){
+        @content;
+    }
+}
+// iPhone 5/SE Width
+@mixin iPhone5 {
+    @media (max-width: 320px){
+        @content;
+    }
+}
+
+// 熱門行政區
+// 一行 : 1024~768, 731, 667
+// 兩行 : 
+// [640, 568] 亂 -> 一行
+// [414, 411, 375, 360] 整齊 -> 維持兩行
+// 四行 : 320
+
+// 區域景點
+// Pixel2XL 以下 : 隱藏區域 tag
+// GalaxyS5-h 以下 : 調整 max-width 為 100%
+// GalaxyS5-w 以下 : 隱藏 Ticket
