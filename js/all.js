@@ -132,11 +132,22 @@ function updateList(selectPage){
             temp++;
             if(start<temp && temp<=end){
                 str_title = data[i].Zone; 
-                str += '<li><img src="'+data[i].Picture1+'"><span class="name">'+data[i].Name+'</span><p class="zone">'+data[i].Zone+'</p><div class="info"><p class="openTime">'+data[i].Opentime+'</p><p class="add">'+data[i].Add+'</p><p class="tel">'+data[i].Tel+'</p>';
+                // str += '<li><img src="'+data[i].Picture1+'"><span class="name">'+data[i].Name+'</span><p class="zone">'+data[i].Zone+'</p><div class="info"><p class="openTime">'+data[i].Opentime+'</p><p class="add">'+data[i].Add+'</p><p class="tel">'+data[i].Tel+'</p>';
+                str += `<li>
+                    <img src="${data[i].Picture1}">
+                    <span class="name">${data[i].Name}</span>
+                    <p class="zone">${data[i].Zone}</p>
+                    <div class="info">
+                        <p class="openTime">${data[i].Opentime}</p>
+                        <p class="add">${data[i].Add}</p>
+                        <p class="tel">${data[i].Tel}</p>`;
+
                 if(data[i].Ticketinfo == ''){
-                    str += '<p class="ticketInfo hasNoTicketInfo">'+data[i].Ticketinfo+'</p></li>';
+                    // str += '<p class="ticketInfo hasNoTicketInfo">'+data[i].Ticketinfo+'</p></li>';
+                    str += `<p class="ticketInfo hasNoTicketInfo">${data[i].Ticketinfo}</p></li>`;
                 }else{
-                    str += '<p class="ticketInfo">'+data[i].Ticketinfo+'</p></div></li>';
+                    // str += '<p class="ticketInfo">'+data[i].Ticketinfo+'</p></div></li>';
+                    str += `<p class="ticketInfo">${data[i].Ticketinfo}</p></div></li>`;
                 }
             }
         }else if(zoneName == '請選擇行政區'){
