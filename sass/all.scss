@@ -1,285 +1,289 @@
-@import 'reset';
-@import 'layout';
-@import 'grid';
-@import 'buttons';
+@import "reset";
+@import "layout";
+@import "grid";
+@import "buttons";
 
-.header{
-    height: 380px;
-    background-color: #000;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-image: url(../images/the-urban-landscape-1698285.png);
-    text-align: center; // 置中
-    padding-top: 89px;
-    h1{
-        font-size: 40px;
-        color: #FFFFFF;
-        letter-spacing: 3.89px;
-        padding-bottom: 96px;
-    }
-    select{
-        width: 80%;
-        max-width: 452px;
-        padding: 10px 0px 10px 10px;
-        // 背景
-        background: rgba(255,255,255,0.70);
-        border: 3px solid #FFFFFF;
-        border-radius: 3px;
-        // 字體
-        font-size: 18px;
-        color: #000000;
-        line-height: 21px;
-    }
+.header {
+  height: 380px;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url(../images/the-urban-landscape-1698285.png);
+  text-align: center; // 置中
+  padding-top: 89px;
+  h1 {
+    font-size: 40px;
+    color: #ffffff;
+    letter-spacing: 3.89px;
+    padding-bottom: 96px;
+  }
+  select {
+    width: 80%;
+    max-width: 452px;
+    padding: 10px 0px 10px 10px;
+    // 背景
+    background: rgba(255, 255, 255, 0.7);
+    border: 3px solid #ffffff;
+    border-radius: 3px;
+    // 字體
+    font-size: 18px;
+    color: #000000;
+    line-height: 21px;
+  }
 }
 
-.main{
-    padding-top: 133px;
-    padding-bottom: 39px;
-    position: relative;
-    .top-menu{
-        background: #FFFFFF;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+.main {
+  padding-top: 133px;
+  padding-bottom: 39px;
+  position: relative;
+  .top-menu {
+    background: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto; // 水平置中
+    position: absolute;
+    top: -30px;
+    // 水平置中：寬度是 80%，因此要向左位移 40%。
+    left: 50%;
+    margin-left: -40%;
+    p {
+      font-size: 18px;
+      color: #000000;
+      line-height: 21px;
+      padding-top: 20px;
+      padding-left: 26px;
+      padding-bottom: 14px;
+    }
+    .hot-zone {
+      @include Pixel2XL() {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+    }
+    button {
+      font-size: 20px;
+      line-height: 23px;
+      color: #ffffff;
+      border-radius: 5px;
+      padding: 9.5px 35px;
+      margin-bottom: 18px;
+      margin-left: 30px;
+      @include Pixel2XL() {
+        margin-left: 0px;
+      }
+      @include GalaxyS5-h() {
+        padding: 9.5px 20px;
+      }
+      @include iPhone8p-w() {
+        padding: 9.5px 35px;
+      }
+    }
+    button:nth-child(1) {
+      background: #8a82cc;
+      margin-left: 51px;
+      @include Pixel2XL() {
+        margin-left: 0px;
+      }
+    }
+    button:nth-child(2) {
+      background: #ffa782;
+    }
+    button:nth-child(3) {
+      background: #f5d105;
+    }
+    button:nth-child(4) {
+      background: #559ac8;
+    }
+  }
+  .dashLine {
+    display: block;
+    border: 1px solid #559ac8;
+    border-style: dashed;
+    width: 85%;
+    margin: 0 auto;
+    @include iPhone8p-w() {
+      margin-top: 50px;
+    }
+    @include iPhone5() {
+      margin-top: 170px;
+    }
+  }
+  .img-border {
+    display: inline-block;
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid #559ac8;
+    position: absolute;
+    top: 123px;
+    left: 49%;
+    background-color: #f7f7f7;
+    @include iPhone8p-w() {
+      top: 173px;
+    }
+    @include iPhone5() {
+      top: 293px;
+    }
+    img {
+      // 參考資料 : https://codepen.io/sosuke/pen/Pjoqqp
+      filter: invert(57%) sepia(100%) saturate(250%) hue-rotate(161deg)
+        brightness(82%) contrast(89%);
+      z-index: 9;
+    }
+  }
+  .content {
+    .title {
+      font-size: 36px;
+      color: #8a82cc;
+      line-height: 43px;
+      text-align: center;
+      padding-bottom: 24px;
+      padding-top: 65px;
+    }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 40px;
+      padding-right: 40px;
+      li {
+        background: #ffffff;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+        max-width: 49%;
+        position: relative;
+        margin-bottom: 36px;
+        @include GalaxyS5-h() {
+          max-width: 100%;
+        }
+        img {
+          display: block;
+          width: 100%;
+          height: 155px;
+          object-fit: cover; // 圖片維持原比例裁剪
+          object-position: 50% 50%; // 預設
+        }
+        span {
+          font-size: 24px;
+          color: #ffffff;
+          line-height: 28px;
+          position: absolute;
+          top: 117px;
+          left: 22px;
+        }
+        div.info {
+          display: flex;
+          flex-direction: column;
+          padding: 16px 24px 4px 24px;
+        }
+        p {
+          font-size: 16px;
+          color: #000000;
+          line-height: 18px;
+        }
+        p.zone {
+          color: #ffffff;
+          position: absolute;
+          top: 125px;
+          right: 22px;
+          @include Pixel2XL() {
+            display: none;
+          }
+        }
+        // 利用偽元素插入圖標
+        p.openTime:before {
+          content: url(../images/icons_clock.png);
+          margin-right: 9px;
+        }
+        p.add:before {
+          content: url(../images/icons_pin.png);
+          margin-right: 10px;
+        }
+        p.tel:before {
+          content: url(../images/icons_phone.png);
+          margin-right: 12px;
+        }
+        p.ticketInfo:before {
+          content: url(../images/icons_tag.png);
+          margin-right: 8px;
+        }
+        p.openTime,
+        p.add,
+        p.tel,
+        p.ticketInfo {
+          line-height: 18px;
+          padding-bottom: 16px;
+        }
+        p.ticketInfo {
+          line-height: 19px;
+          padding-bottom: 0px;
+          position: absolute;
+          bottom: 16px;
+          right: 24px;
+          @include GalaxyS5-w() {
+            position: static;
+            padding-bottom: 16px;
+          }
+        }
+        p.hasNoTicketInfo {
+          right: 90px;
+        }
+      }
+    }
+    .pages {
+      font-size: 14px;
+      color: #4a4a4a;
+      line-height: 17px;
+      text-align: center;
+      a {
+        cursor: pointer;
+      }
+      a:hover {
+        background-color: #ddd;
+        transition: background-color 0.3s;
         border-radius: 5px;
-        width: 80%;
-        max-width: 800px;
-        margin: 0 auto; // 水平置中
-        position: absolute;
-        top: -30px;
-        // 水平置中：寬度是 80%，因此要向左位移 40%。
-        left: 50%;
-        margin-left: -40%;
-        p{
-            font-size: 18px;
-            color: #000000;
-            line-height: 21px;
-            padding-top: 20px;
-            padding-left: 26px;
-            padding-bottom: 14px;
-        }
-        .hot-zone{
-            @include Pixel2XL(){
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-            }
-        }
-        button{
-            font-size: 20px;
-            line-height: 23px;
-            color: #FFFFFF;
-            border-radius: 5px;
-            padding: 9.5px 35px;
-            margin-bottom: 18px;
-            margin-left: 30px;
-            @include Pixel2XL(){
-                margin-left: 0px;
-            }
-            @include GalaxyS5-h(){
-                padding: 9.5px 20px;
-            }
-            @include iPhone8p-w(){
-                padding: 9.5px 35px;
-            }
-        }
-        button:nth-child(1){
-            background: #8A82CC;
-            margin-left: 51px;
-            @include Pixel2XL(){
-                margin-left: 0px;
-            }
-        }
-        button:nth-child(2){
-            background: #FFA782;
-        }
-        button:nth-child(3){
-            background: #F5D105;
-        }
-        button:nth-child(4){
-            background: #559AC8;
-        }
-    }
-    .dashLine{
-        display: block;
-        border: 1px solid #559AC8;
-        border-style: dashed;
-        width: 85%;
-        margin: 0 auto;
-        @include iPhone8p-w(){
-            margin-top: 50px;
-        }
-        @include iPhone5(){
-            margin-top: 170px;
-        }
-    }
-    .img-border{
+      }
+      a.prevLink {
+        margin-right: 22px;
+        padding: 2.5px 0px;
+      }
+      a.nextLink {
+        margin-left: 22px;
+        padding: 2.5px 0px;
+      }
+      div {
         display: inline-block;
-        padding: 3px;
-        border-radius: 50%;
-        border: 1px solid #559AC8;
-        position: absolute;
-        top: 123px;
-        left: 49%;
-        background-color: #F7F7F7;
-        @include iPhone8p-w(){
-            top: 173px;
+        a {
+          margin-left: 4px;
+          margin-right: 4px;
+          padding: 2.5px 8px;
         }
-        @include iPhone5(){
-            top: 293px;
-        }
-        img{
-            // 參考資料 : https://codepen.io/sosuke/pen/Pjoqqp
-            filter: invert(57%) sepia(100%) saturate(250%) hue-rotate(161deg) brightness(82%) contrast(89%);
-            z-index: 9;
-        }
+      }
+      a.active {
+        color: #559ac8;
+      }
+      a.non-active {
+        color: rgba(73, 73, 73, 0.5);
+      }
     }
-    .content{
-        .title{
-            font-size: 36px;
-            color: #8A82CC;
-            line-height: 43px;
-            text-align: center;
-            padding-bottom: 24px;
-            padding-top: 65px;
-        }
-        .list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-left: 40px;
-            padding-right: 40px;
-            li{
-                background: #FFFFFF;
-                box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
-                max-width: 49%;
-                position: relative;
-                margin-bottom: 36px;
-                @include GalaxyS5-h(){
-                    max-width: 100%;
-                }
-                img{
-                    display: block;
-                    width: 100%;
-                    height: 155px;
-                    object-fit: cover; // 圖片維持原比例裁剪
-                    object-position: 50% 50%; // 預設
-                }
-                span{
-                    font-size: 24px;
-                    color: #FFFFFF;
-                    line-height: 28px;
-                    position: absolute;
-                    top: 117px;
-                    left: 22px;
-                }
-                div.info{
-                    display: flex;
-                    flex-direction: column;
-                    padding: 16px 24px 4px 24px;
-                }
-                p{
-                    font-size: 16px;
-                    color: #000000;
-                    line-height: 18px;
-                }
-                p.zone{
-                    color: #FFFFFF;
-                    position: absolute;
-                    top: 125px;
-                    right: 22px;
-                    @include Pixel2XL(){
-                        display: none;
-                    }
-                }
-                // 利用偽元素插入圖標
-                p.openTime:before{
-                    content:url(../images/icons_clock.png);
-                    margin-right: 9px;
-                }
-                p.add:before{
-                    content:url(../images/icons_pin.png);
-                    margin-right: 10px;
-                }
-                p.tel:before{
-                    content:url(../images/icons_phone.png);
-                    margin-right: 12px;
-                }
-                p.ticketInfo:before{
-                    content:url(../images/icons_tag.png);
-                    margin-right: 8px;
-                }
-                p.openTime, p.add, p.tel, p.ticketInfo{
-                    line-height: 18px;
-                    padding-bottom: 16px;
-                }
-                p.ticketInfo{
-                    line-height: 19px;
-                    padding-bottom: 0px;
-                    position: absolute;
-                    bottom: 16px;
-                    right: 24px;
-                    @include GalaxyS5-w(){
-                        position: static;
-                        padding-bottom: 16px;
-                    }
-                }
-                p.hasNoTicketInfo{
-                    right: 90px;
-                }
-            }
-        }
-        .pages{
-            font-size: 14px;
-            color: #4A4A4A;
-            line-height: 17px;
-            text-align: center;
-            a{
-                cursor: pointer;
-            }
-            a:hover{
-                background-color: #ddd;
-                transition: background-color .3s;
-                border-radius: 5px;
-            }
-            a.prevLink{
-                margin-right: 22px;
-                padding: 2.5px 0px;
-            }
-            a.nextLink{
-                margin-left: 22px;
-                padding: 2.5px 0px;
-            }
-            div{
-                display: inline-block;
-                a{
-                    margin-left: 4px;
-                    margin-right: 4px;
-                    padding: 2.5px 8px;
-                }
-            }
-            a.active{
-                color: #559AC8;
-            }
-            a.non-active{
-                color: rgba(73,73,73,0.50);
-            }
-        }
-    }
+  }
 }
 
-.footer{
-    text-align: center;
-    background: #559AC8;
-    padding-top: 1.2%;
-    padding-bottom: 1.1%;
-    p{
-        font-size: 14px;
-        color: #FFFFFF;
-        line-height: 17px;
-        padding-bottom: 0.7%;
-    }
-    a{
-        font-size: 14px;
-        color: #FFD366;
-        line-height: 17px;
-    }
+.footer {
+  text-align: center;
+  background: #559ac8;
+  padding-top: 1.2%;
+  padding-bottom: 1.1%;
+  p {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 17px;
+    padding-bottom: 0.7%;
+  }
+  a {
+    font-size: 14px;
+    color: #ffd366;
+    line-height: 17px;
+  }
 }

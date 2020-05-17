@@ -1,31 +1,31 @@
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: Microsoft JhengHei, Helvetica;
-	font-size: 16px;
+  font-family: Microsoft JhengHei, Helvetica;
+  font-size: 16px;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .clearfix:after {
-	content: "";
-	display: table;
-	clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.wrap{
-	max-width: 1024px;
-	margin: 0 auto;
-	background-color: #F7F7F7;
+.wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
 }
